@@ -1,0 +1,37 @@
+### Emacs ###
+*~
+\#*\#
+.lock
+.elc
+auto-save-list
+tramp
+.\#*
+
+# Org-mode
+.org-id-locations
+*_archive
+
+# Repositories
+CVS
+.cvsignore
+.DS_Store
+.places
+.svn
+
+
+# Directories
+emms/
+eshell/
+elpa/
+logs/
+var/
+backups/
+
+# Files
+
+/custom.el
+autoloads.el
+compile.log
+savehist
+session.*
+

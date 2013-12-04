@@ -1,0 +1,33 @@
+* Priyadarshan's Emacs configuration
+
+Also to celebrate today's auspicious date, 27 November 2013, I have started a new version of my Emacs configuration. I started hearing about Emacs in the late 80s, and looking at it more deeply in the late 90s. My official Emacs use started in 2002, although it took me years to adopt it fully as my main tool.
+
+** General thoughts
+
+- I decided against using the /literate programming/ style. Emacs configuration is, to me, more of an assembly of settings and collected code, than a proper program. Also, =org-mode= src blocks do not have full syntax highlighting, and that is not fun. I am going to miss Org-mode useful navigation functions, though.
+
+- The included =.emacs= can be symlinked in ~. One can thus run multiple Emacs, all with its own .emacs.d.[name], so that, for example,  multiple setups can be tested. Anything to be shared among the various Emacs can reside in .emacs.
+
+- I am going to borrow code from the configurations I have been lookin at the most: =magnars=, =purcell=, =jwiegley=, but only where needed.
+
+** el-get vs package.el vs git submodules
+
+I am using =el-get= as preferred package installation method, since it installs a package as a whole git (or other vcs) project. That is useful, since it allows to see the package's lifetime. =package.el= does not do that.
+
+One could use =git= submodules, as =magnars= and =jwiegely= do, but I prefer to work inside Emacs as much as possible, as a principle. I find switching contexts deeply affects productivity. That is why I am against =cask=, too, although I see how it can be useful while developing packages.
+
+
+** Directory structure
+
+
+
+- =var= contains changeable settings
+- =el-get= has all installed packages, as defined inside init.el. That can be rebuilt at any time, so it is not under revision control
+- =site-lisp= contains any package or code that is not available with el-get
+
+
+#+SETUPFILE: ~/.emacs.d/org-templates/level-0.org
+
+# Local Variables:
+# mode: org
+# End:
